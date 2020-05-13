@@ -11,15 +11,15 @@
         <TextBlock Text="Back" FontSize="14" Margin="371,10,379,411"></TextBlock>
         <DataGrid Margin="0 44 0 0" x:Name="BackDG" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Levels" Binding="{Binding Level}" Width="100"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="Foto" Width="200">
+                <DataGridTextColumn x:Name="Levels" Header="Levels" Binding="{Binding Level}" Width="100"></DataGridTextColumn>
+                <DataGridTemplateColumn x:Name="Photo" Header="Foto" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Image Source="{Binding Image}"></Image>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Description" Binding="{Binding Content}" Width="400"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Content" Header="Description" Binding="{Binding Content}" Width="400"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="Subsribe" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -29,5 +29,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="752,10,0,0" VerticalAlignment="Top" Width="auto" Height="23"/>
     </Grid>
 </Page>

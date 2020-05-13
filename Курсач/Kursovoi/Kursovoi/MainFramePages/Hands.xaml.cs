@@ -23,6 +23,23 @@ namespace Kursovoi.MainFramePages
     {
         KursachEntities db;
         private int a;
+        private string _str;
+        public Hands()
+        {
+            InitializeComponent();
+            db = new KursachEntities();
+            db.Topics.Load();
+            HandsDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Hands");
+            Delete.Visibility = Visibility.Hidden;
+        }
+        public Hands(string str)
+        {
+            _str = str;
+            InitializeComponent();
+            db = new KursachEntities();
+            db.Topics.Load();
+            HandsDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Hands");
+        }
         public Hands(int _id)
         {
             a = _id;
@@ -30,6 +47,10 @@ namespace Kursovoi.MainFramePages
             db = new KursachEntities();
             db.Topics.Load();
             HandsDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Hands");
+            Levels.IsReadOnly = true;
+            Content.IsReadOnly = true;
+            Photo.IsReadOnly = true;
+            Delete.Visibility = Visibility.Hidden;
         }
         private void Subscribe_Click(object sender, RoutedEventArgs e)
         {

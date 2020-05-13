@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddWorkout.xaml.cs">
+      <DependentUpon>AddWorkout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Admin.cs">
       <DependentUpon>Kurs.tt</DependentUpon>
     </Compile>
@@ -124,6 +127,10 @@
     <Compile Include="UsersToTopic.cs">
       <DependentUpon>Kurs.tt</DependentUpon>
     </Compile>
+    <Page Include="AddWorkout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

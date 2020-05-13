@@ -7,12 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="558.965" Width="884.138">
     <Grid>
-        <Button x:Name="Registration" Content="Registration" HorizontalAlignment="Left" Margin="734,0,0,0" VerticalAlignment="Top" Width="64" Height="19" Click="Reg_Click"/>
-        <Button x:Name="Authorization" Content="Authorization" HorizontalAlignment="Left" Margin="803,0,0,0" VerticalAlignment="Top" Width="64" Height="19" Click="Auth_Click"/>
+        <Button x:Name="Registration" Content="Registration" HorizontalAlignment="Left" Margin="734,10,0,0" VerticalAlignment="Top" Width="64" Height="23" Click="Reg_Click"/>
+        <Button x:Name="Authorization" Content="Authorization" HorizontalAlignment="Left" Margin="803,10,0,0" VerticalAlignment="Top" Width="64" Height="23" Click="Auth_Click"/>
         <Frame Margin="0,0,0,10" x:Name="Frame" NavigationUIVisibility="Hidden"/>
-        <Button Content="Legs" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="84" Height="23" Click="Legs_Click"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="99,10,0,0" VerticalAlignment="Top" Width="84" Height="23" Click="Back_Click"/>
-        <Button Content="Hands" HorizontalAlignment="Left" Margin="188,10,0,0" VerticalAlignment="Top" Width="84" Height="23" Click="Hands_Click"/>
-        <Button x:Name="MyWorkouts" Content="Button" HorizontalAlignment="Left" Margin="813,1,0,0" VerticalAlignment="Top" Width="54" Height="18" Click="My_Click"/>
+        <Button x:Name="MyWorkouts" Content="My Workout" HorizontalAlignment="Left" Margin="783,10,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="My_Click"/>
+        <Menu x:Name="Menu" HorizontalAlignment="Left" Height="23" Margin="598,10,0,0" VerticalAlignment="Top" Width="auto">
+            <MenuItem x:Name="AddWorkouts" Header="Add Workout" Click="Add_Click"/>
+            <MenuItem x:Name="UsersInfo" Header="Users info" Click="Info_Click"/>
+        </Menu>
+        <Menu HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto">
+            <MenuItem Header="Menu" Width="auto">
+                <MenuItem Header="Legs" Click="Legs_Click" Width="auto"/>
+                <MenuItem Header="Back" Click="Back_Click" Width="auto"/>
+                <MenuItem Header="Hands" Click="Hands_Click" Width="auto"/>
+                <MenuItem x:Name="Logout" Header="Logout" Width="auto" Click="Logout_Click"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

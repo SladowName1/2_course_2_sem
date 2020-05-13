@@ -27,6 +27,25 @@ namespace Kursovoi.MainFramePages
     {
         KursachEntities db;
         private int a;
+        private string _str;
+        public Back()
+        {
+            a = 0;
+            InitializeComponent();
+            db = new KursachEntities();
+            db.Topics.Load();
+            BackDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Back");
+            Delete.Visibility = Visibility.Hidden;
+        }
+        public Back(string str)
+        {
+            a = 0;
+            _str = str;
+            InitializeComponent();
+            db = new KursachEntities();
+            db.Topics.Load();
+            BackDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Back");
+        }
         public Back(int _id)
         {
             a = _id;
@@ -34,6 +53,10 @@ namespace Kursovoi.MainFramePages
             db = new KursachEntities();
             db.Topics.Load();
             BackDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x=>x.Topic1=="Back");
+            Levels.IsReadOnly = true;
+            Content.IsReadOnly = true;
+            Photo.IsReadOnly = true;
+            Delete.Visibility = Visibility.Hidden;
         }
         private void BackLoaded(object sender, RoutedEventArgs e)
         {
@@ -51,6 +74,13 @@ namespace Kursovoi.MainFramePages
                     db.SaveChanges();
                 }
             }
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            db.Topics.Load();
+            db.Topics.Remove((Topic)BackDG.SelectedItem);
+            db.UsersToTopics.Remove(db.UsersToTopics.Where(x=>x.TopicNumber == ((Topic)BackDG.SelectedItem).NumberOfTopic).First());
+            db.SaveChanges();
         }
     }
 }

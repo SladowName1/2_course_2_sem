@@ -24,13 +24,35 @@ namespace Kursovoi
     {
         KursachEntities db;
         private int a;
+        private string _str;
+        public Legs()
+        {
+            InitializeComponent();
+            db = new KursachEntities();
+            db.Topics.Load();
+            LegsDg.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Legs");
+            Delete.Visibility = Visibility.Hidden;
+        }
+        public Legs(string str)
+        {
+            _str = str;
+            InitializeComponent();
+            db = new KursachEntities();
+            db.Topics.Load();
+            LegsDg.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Legs");
+
+        }
         public Legs(int _id)
         {
             a = _id;
             InitializeComponent();
             db = new KursachEntities();
             db.Topics.Load();
-            LegsDg.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Legs");   
+            LegsDg.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Legs");
+            Levels.IsReadOnly = true;
+            Content.IsReadOnly = true;
+            Photo.IsReadOnly = true;
+            Delete.Visibility = Visibility.Hidden;
         }
 
         private void Subscribe_Click(object sender, RoutedEventArgs e)
