@@ -34,8 +34,21 @@ namespace Kursovoi
                 {
                     KursachEntities kursachEntities = new KursachEntities();
                     kursachEntities.Users.Load();
+                    kursachEntities.Admins.Load();
                     BindingList<User> ts = kursachEntities.Users.Local.ToBindingList();
+                    BindingList<Admin> admins = kursachEntities.Admins.Local.ToBindingList();
                     int a = 0;
+                    foreach (var i in admins)
+                    {
+                        if(i.Login==AuthLogin.Text && i.Password==AuthPassword.Password)
+                        {
+                            MainWindow mainWindow = new MainWindow(i.Login);
+                            mainWindow.Show();
+                            this.Close();
+                            a++;
+                            break;
+                        }
+                    }
                     foreach(var i in ts)
                     {
                         if (i.Login == AuthLogin.Text && i.Password == AuthPassword.Password)
@@ -44,6 +57,7 @@ namespace Kursovoi
                             mainWindow.Show();
                             this.Close();
                             a++;
+                            break;
                         }
                     } 
                     if(a==0)

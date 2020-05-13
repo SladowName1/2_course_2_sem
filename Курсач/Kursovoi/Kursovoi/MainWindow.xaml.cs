@@ -23,6 +23,7 @@ namespace Kursovoi
     public partial class MainWindow : Window
     {
         private int a;
+        private string _str;
         public MainWindow()
         {
             InitializeComponent();
@@ -36,13 +37,19 @@ namespace Kursovoi
             Authorization.Visibility = Visibility.Hidden;
             MyWorkouts.Visibility = Visibility.Visible;
         }
+        public MainWindow(string str)
+        {
+            _str = str;
+            InitializeComponent();
+            Registration.Visibility = Visibility.Hidden;
+            Authorization.Visibility = Visibility.Hidden;
+            MyWorkouts.Visibility = Visibility.Hidden;
+        }
         private void Auth_Click(object sender, RoutedEventArgs e)
         {
             Authorization auth= new Authorization();
             auth.Show();
             this.Close();
-            
-
         }
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
@@ -52,8 +59,7 @@ namespace Kursovoi
         }
         private void Legs_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Content = new Legs(a);
-                
+            Frame.Content = new Legs(a);     
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {

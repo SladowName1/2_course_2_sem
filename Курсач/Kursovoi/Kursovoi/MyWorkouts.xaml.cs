@@ -51,9 +51,30 @@ namespace Kursovoi
                     if(4>((Topic)MyWorkoutsDG.SelectedItem).Level)
                     {
                         var result2 = MessageBox.Show("Не хотели бы приступить к следующему уровну?", "Qustion", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                        if(result2==MessageBoxResult.Yes)
+                        if (result2 == MessageBoxResult.Yes)
                         {
+                            int topicasd=0;
+                            var _topicNumber = db.Topics;
+                            int d = 0;
+                            foreach(Topic i in _topicNumber.Where(y => y.Topic1 == ((Topic)MyWorkoutsDG.SelectedItem).Topic1 && y.Level > ((Topic)MyWorkoutsDG.SelectedItem).Level))
+                            {
+                                if (d == 0)
+                                {
+                                    d++;
+                                    topicasd = i.NumberOfTopic;
+                                }
+                                else break;
+                            }
+                            UsersToTopic user1 = new UsersToTopic { UsersId = a, TopicNumber = topicasd};
+                            db.UsersToTopics.Add(user1);
+                            db.SaveChanges();
+                            BindingList<Topic> topics1 = new BindingList<Topic>();
 
+                            foreach (var i in db.UsersToTopics.Where(x => x.UsersId == a))
+                            {
+                                topics1.Add(db.Topics.Where(y => y.NumberOfTopic == i.TopicNumber).First());
+                            }
+                            MyWorkoutsDG.ItemsSource = topics1;
                         }
                     }
                     else
