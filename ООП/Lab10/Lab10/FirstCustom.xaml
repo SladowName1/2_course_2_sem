@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Lab10.FirstCustom"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lab10"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <RadioButton x:Name="First" Content="1" HorizontalAlignment="Left" Margin="86,73,0,0" VerticalAlignment="Top" Checked="First_Checked"/>
+        <RadioButton x:Name="Second" Content="2" HorizontalAlignment="Left" Margin="130,73,0,0" VerticalAlignment="Top" Checked="Second_Checked"/>
+        <RadioButton x:Name="Third" Content="3 " HorizontalAlignment="Left" Margin="168,73,0,0" VerticalAlignment="Top" Checked="Third_Checked"/>
+        <Label x:Name="Label" HorizontalAlignment="Left" Margin="86,93,0,0" VerticalAlignment="Top" Width="132"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="Lab10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <local:Phone Price="600" Title="iPhone 6S" x:Key="iPhone6s" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:WindowCommands.Exit" Executed="Exit_Executed"/>
+    </Window.CommandBindings>
+    <Grid x:Name="grid1" DataContext="{StaticResource iPhone6s}">
+        <TextBox Text="{Binding Price, Mode=TwoWay}" Margin="77,32,661,359"   />
+        <Button Content="IsTrue?"  Click="Phone_Click" Margin="218,33,506,359" />
+        <local:FirstCustom RenderTransformOrigin="0.488,0.254" Margin="181,261,302,22"/>
+        <local:SecondCustom Margin="-10,-78,10,77"/>
+        <TextBlock Text="Цена" Margin="10,33,731,359" />
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" PreviewMouseDown="Control_MouseDown" Margin="0,136,0,211" Height="72">
+            <Button x:Name="button1" Height="50" Background="Red" PreviewMouseDown="Control_MouseDown" Margin="10,10,702,10" >
+                <Rectangle Width="30" Height="30" Fill="Blue" PreviewMouseDown="Control_MouseDown" />
+            </Button>
+        </StackPanel>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="194,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="130" Width="289"/>
+        <Menu VerticalAlignment="Top" MinHeight="25">
+            <MenuItem Header="Выход" Command="local:WindowCommands.Exit"  />
+        </Menu>
+    </Grid>
+</Window>

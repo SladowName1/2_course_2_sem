@@ -1,0 +1,32 @@
+﻿<Window x:Class="Kursovoi.MyWorkouts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovoi"
+        mc:Ignorable="d"
+        Title="MyWorkouts" Height="450" Width="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" x:Name="MyWorkoutsDG">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Topic" Binding="{Binding Topic1}" IsReadOnly="True"  Width="50"></DataGridTextColumn>
+                <DataGridTextColumn Header="Level" Binding="{Binding Level}" IsReadOnly="True"  Width="50"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Foto" Width="250">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Image}"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Description" IsReadOnly="True"  Binding="{Binding Content}" Width="390"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="IsDone" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Subscribe" Click="IsDone_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

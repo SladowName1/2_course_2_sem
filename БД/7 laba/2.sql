@@ -1,3 +1,4 @@
+use GR_Univer
 select A2.AUDITORIUM_TYPENAME,
 max(A1.Auditorium_capacity) [max],
 min(A1.Auditorium_capacity) [min],

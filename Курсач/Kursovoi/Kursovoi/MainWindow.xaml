@@ -1,0 +1,18 @@
+﻿<Window x:Class="Kursovoi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovoi"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="558.965" Width="884.138">
+    <Grid>
+        <Button x:Name="Registration" Content="Registration" HorizontalAlignment="Left" Margin="734,0,0,0" VerticalAlignment="Top" Width="64" Height="19" Click="Reg_Click"/>
+        <Button x:Name="Authorization" Content="Authorization" HorizontalAlignment="Left" Margin="803,0,0,0" VerticalAlignment="Top" Width="64" Height="19" Click="Auth_Click"/>
+        <Frame Margin="0,0,0,10" x:Name="Frame" NavigationUIVisibility="Hidden"/>
+        <Button Content="Legs" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="84" Height="23" Click="Legs_Click"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="99,10,0,0" VerticalAlignment="Top" Width="84" Height="23" Click="Back_Click"/>
+        <Button Content="Hands" HorizontalAlignment="Left" Margin="188,10,0,0" VerticalAlignment="Top" Width="84" Height="23" Click="Hands_Click"/>
+        <Button x:Name="MyWorkouts" Content="Button" HorizontalAlignment="Left" Margin="813,1,0,0" VerticalAlignment="Top" Width="54" Height="18" Click="My_Click"/>
+    </Grid>
+</Window>

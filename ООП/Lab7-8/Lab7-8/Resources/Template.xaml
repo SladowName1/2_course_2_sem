@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Lab7_8.Resources">
+    <ControlTemplate TargetType="Button" x:Key="TemplateBut">
+        <Border CornerRadius="25" BorderBrush="Yellow"  Width="auto" Height="auto" Background="Green">
+            <ContentControl  HorizontalAlignment="Center" VerticalAlignment="Center" Content="Add task" />
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

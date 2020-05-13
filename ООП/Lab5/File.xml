@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <Name>qweqwe</Name>
+    <LastName>qwe</LastName>
+    <Age>10</Age>
+    <Profession>ИСиТ</Profession>
+    <Datetime>2001-04-20T00:00:00</Datetime>
+    <Course>1</Course>
+    <Group>12</Group>
+    <Avg>2.8</Avg>
+    <Gender>Male</Gender>
+    <Adres>
+      <City>qwe</City>
+      <Index>312</Index>
+      <Streat>qwe</Streat>
+      <NumberHouse>12</NumberHouse>
+      <Flat>123</Flat>
+    </Adres>
+  </Student>
+</ArrayOfStudent>

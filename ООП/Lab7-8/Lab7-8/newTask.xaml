@@ -1,0 +1,92 @@
+﻿<Window x:Class="Lab7_8.newTask"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab7_8"
+        mc:Ignorable="d"
+        Icon="D:\Лого.jpg"
+        Title="newTask" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="Image/Fon.jpg"/>
+    </Window.Background>
+    <Grid x:Name="addGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="Image/Fon.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="TextBox" Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Margin="52,106,67,74" Style="{DynamicResource MultiTr}">
+         </TextBox>
+        <StackPanel x:Name="PanelButton" Grid.Row="0" Grid.Column="1" Margin="67,106,52,74" Orientation="Horizontal">
+            <RadioButton x:Name="FirstBut" Checked="RadioButton_Checked" FontSize="14" FontWeight="Bold" Margin="80 0 0 0" Content="1">
+                <RadioButton.Style>
+                    <Style TargetType="RadioButton">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=FirstBut, Path=IsChecked}" Value="True">
+                                <Setter Property="Foreground" Value="Green"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </RadioButton.Style>
+            </RadioButton>
+            <RadioButton x:Name="SecondBut" Checked="RadioButton_Checked" FontSize="14" FontWeight="Bold" Content="2">
+                <RadioButton.Style>
+                    <Style TargetType="RadioButton">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=SecondBut, Path=IsChecked}" Value="True">
+                                <Setter Property="Foreground" Value="Green"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </RadioButton.Style>
+            </RadioButton>
+            <RadioButton x:Name="ThirdBut" Checked="RadioButton_Checked" FontSize="14" FontWeight="Bold" Content="3" >
+                <RadioButton.Style>
+                    <Style TargetType="RadioButton">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=ThirdBut, Path=IsChecked}" Value="True">
+                                <Setter Property="Foreground" Value="Green"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </RadioButton.Style>
+            </RadioButton>
+            <RadioButton x:Name="FirtdBut" Checked="RadioButton_Checked" FontSize="14" FontWeight="Bold" Content="10" >
+                <RadioButton.Style>
+                    <Style TargetType="RadioButton">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=FirtdBut, Path=IsChecked}" Value="True">
+                                <Setter Property="Foreground" Value="Green"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </RadioButton.Style>
+            </RadioButton>
+        </StackPanel>
+        <ComboBox x:Name="ComboBoxAdd" Grid.Row="1" Grid.Column="0" Margin="52,105,67,77" >
+            <ComboBoxItem >
+                <TextBlock FontSize="14" FontWeight="Bold" Text="{DynamicResource Daily}" Background="{StaticResource DailyDo}"></TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock FontSize="14" FontWeight="Bold" Text="{DynamicResource Weekly}" Background="{DynamicResource WekklyDo}"></TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock FontSize="14" FontWeight="Bold" Text="{DynamicResource Monthly}" Background="{StaticResource MonthlyDo}"></TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock FontSize="14" FontWeight="Bold" Text="{DynamicResource Annualy}" Background="{StaticResource YearDo}"></TextBlock>
+            </ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="AddBut" Template="{StaticResource TemplateBut}" Width="Auto" Height="Auto"  Grid.Column="1" Grid.Row="1" Margin="93,105,85,77" Content="{DynamicResource AddTask}" FontSize="14" FontWeight="Bold" Click="AddBut_Click" Style="{DynamicResource EventTr}"></Button>
+        <Label Content="{DynamicResource Task}" HorizontalAlignment="Left" Margin="169,75,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+        <Label Content="{DynamicResource Priorety}" Grid.Column="1" HorizontalAlignment="Left" Margin="167,75,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" />
+        <Label Content="{DynamicResource Pereodicaly}" HorizontalAlignment="Left" Margin="147,71,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+    </Grid>
+</Window>
