@@ -1,0 +1,24 @@
+﻿<Window x:Class="Kursovoi.InfoAboutUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursovoi"
+        mc:Ignorable="d"
+        Title="InfoAboutUser" Height="323.041" Width="223.041">
+    <Grid Margin="0,0,2,0">
+        <DataGrid x:Name="UserInfoDg" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="UserIdDg" Binding="{Binding UsersId}" Header="User Id" Width="75"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="TopicNumberDg" Binding="{Binding TopicNumber}" Header="Topic number" Width="auto"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Delete" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Delete" Click="Delete_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

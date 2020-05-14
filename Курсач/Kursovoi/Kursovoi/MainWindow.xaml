@@ -11,9 +11,11 @@
         <Button x:Name="Authorization" Content="Authorization" HorizontalAlignment="Left" Margin="803,10,0,0" VerticalAlignment="Top" Width="64" Height="23" Click="Auth_Click"/>
         <Frame Margin="0,0,0,10" x:Name="Frame" NavigationUIVisibility="Hidden"/>
         <Button x:Name="MyWorkouts" Content="My Workout" HorizontalAlignment="Left" Margin="783,10,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="My_Click"/>
-        <Menu x:Name="Menu" HorizontalAlignment="Left" Height="23" Margin="598,10,0,0" VerticalAlignment="Top" Width="auto">
-            <MenuItem x:Name="AddWorkouts" Header="Add Workout" Click="Add_Click"/>
-            <MenuItem x:Name="UsersInfo" Header="Users info" Click="Info_Click"/>
+        <Menu x:Name="Menu" HorizontalAlignment="Left" Height="23" Margin="696,10,0,0" VerticalAlignment="Top" Width="auto">
+            <MenuItem Header="Admin">
+                <MenuItem x:Name="AddWorkouts" Header="Add Workout" Click="Add_Click"/>
+                <MenuItem x:Name="UsersInfo" Header="Users info" Click="Info_Click"/>
+            </MenuItem>
         </Menu>
         <Menu HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto">
             <MenuItem Header="Menu" Width="auto">

@@ -32,6 +32,7 @@ namespace Kursovoi
             db.Topics.Load();
             LegsDg.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Legs");
             Delete.Visibility = Visibility.Hidden;
+            Refresh.Visibility = Visibility.Hidden;
         }
         public Legs(string str)
         {
@@ -53,6 +54,7 @@ namespace Kursovoi
             Content.IsReadOnly = true;
             Photo.IsReadOnly = true;
             Delete.Visibility = Visibility.Hidden;
+            Refresh.Visibility = Visibility.Hidden;
         }
 
         private void Subscribe_Click(object sender, RoutedEventArgs e)
@@ -67,6 +69,11 @@ namespace Kursovoi
                     db.SaveChanges();
                 }
             }
+        }
+        private void Refresh_Click(object sendeer, RoutedEventArgs e)
+        {
+            db.Topics.Load();
+            LegsDg.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Legs");
         }
     }
 }

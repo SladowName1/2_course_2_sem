@@ -76,14 +76,11 @@
     <Compile Include="AdminToUser.cs">
       <DependentUpon>Kurs.tt</DependentUpon>
     </Compile>
-    <Compile Include="AdminWindow.xaml.cs">
-      <DependentUpon>AdminWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AuthUserWindow.xaml.cs">
-      <DependentUpon>AuthUserWindow.xaml</DependentUpon>
+    <Compile Include="InfoAboutUser.xaml.cs">
+      <DependentUpon>InfoAboutUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Kurs.Context.cs">
       <AutoGen>True</AutoGen>
@@ -131,15 +128,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AuthUserWindow.xaml">
+    <Page Include="InfoAboutUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -32,7 +32,7 @@ namespace Kursovoi
             db.Topics.Load();
             BindingList<UsersToTopic> usersTos = db.UsersToTopics.Local.ToBindingList();
             BindingList<Topic> topics = new BindingList<Topic>();
-            foreach(var i in db.UsersToTopics.Where(x=>x.UsersId==a))
+            foreach (var i in db.UsersToTopics.Where(x=>x.UsersId==a))
             {
                 topics.Add(db.Topics.Where(y => y.NumberOfTopic == i.TopicNumber).First());
             }
@@ -48,7 +48,14 @@ namespace Kursovoi
                 {
                     db.UsersToTopics.Remove(db.UsersToTopics.Where(x => x.UsersId == a && x.TopicNumber == ((Topic)MyWorkoutsDG.SelectedItem).NumberOfTopic).First());
                     db.SaveChanges();
-                    if(4>((Topic)MyWorkoutsDG.SelectedItem).Level)
+                    var maxLevel = db.Topics;
+                    int maxlevel = 0;
+                    foreach(Topic i in maxLevel.Where(y => y.Topic1 == ((Topic)MyWorkoutsDG.SelectedItem).Topic1 && y.Level > ((Topic)MyWorkoutsDG.SelectedItem).Level))
+                    {
+                        if (maxlevel < i.Level)
+                            maxlevel = (int)i.Level;
+                    }
+                    if(maxlevel>((Topic)MyWorkoutsDG.SelectedItem).Level)
                     {
                         var result2 = MessageBox.Show("Не хотели бы приступить к следующему уровну?", "Qustion", MessageBoxButton.YesNo, MessageBoxImage.Question);
                         if (result2 == MessageBoxResult.Yes)
@@ -63,7 +70,7 @@ namespace Kursovoi
                                     d++;
                                     topicasd = i.NumberOfTopic;
                                 }
-                                else break;
+                                else if(d>0) break;
                             }
                             UsersToTopic user1 = new UsersToTopic { UsersId = a, TopicNumber = topicasd};
                             db.UsersToTopics.Add(user1);

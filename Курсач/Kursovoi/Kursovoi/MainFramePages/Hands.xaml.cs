@@ -31,6 +31,7 @@ namespace Kursovoi.MainFramePages
             db.Topics.Load();
             HandsDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Hands");
             Delete.Visibility = Visibility.Hidden;
+            Refresh.Visibility = Visibility.Hidden;
         }
         public Hands(string str)
         {
@@ -51,6 +52,7 @@ namespace Kursovoi.MainFramePages
             Content.IsReadOnly = true;
             Photo.IsReadOnly = true;
             Delete.Visibility = Visibility.Hidden;
+            Refresh.Visibility = Visibility.Hidden;
         }
         private void Subscribe_Click(object sender, RoutedEventArgs e)
         {
@@ -63,6 +65,11 @@ namespace Kursovoi.MainFramePages
                     db.SaveChanges();
                 }
             }
+        }
+        private void Refresh_Click(object sendeer, RoutedEventArgs e)
+        {
+            db.Topics.Load();
+            HandsDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Hands");
         }
     }
 }

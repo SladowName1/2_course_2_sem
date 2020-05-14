@@ -98,16 +98,13 @@ namespace Kursovoi
         }
         private void Add_Click(object sender,RoutedEventArgs e)
         {
-
-        }
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            KursachEntities kursachEntities = new KursachEntities();
-            kursachEntities.Topics.Load();
+            AddWorkout addWorkout = new AddWorkout();
+            addWorkout.Show();
         }
         private void Info_Click(object sender,RoutedEventArgs e)
         {
-
+            InfoAboutUser infoAboutUser = new InfoAboutUser();
+            infoAboutUser.Show();
         }
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
@@ -115,5 +112,6 @@ namespace Kursovoi
             this.Close();
             mainWindow.Show();
         }
+
     }
 }
