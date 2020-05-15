@@ -9,9 +9,9 @@
       Title="Back" Loaded="BackLoaded">
     <Grid>
         <TextBlock Text="Back" FontSize="14" Margin="371,10,379,411"></TextBlock>
-        <DataGrid Margin="0 44 0 0" x:Name="BackDG" AutoGenerateColumns="False" CanUserSortColumns="True">
+        <DataGrid Margin="0 44 0 0" x:Name="BackDG" AutoGenerateColumns="False" CanUserSortColumns="True" Background="#8E0053">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="Levels" Header="Levels" Binding="{Binding Level}" Width="100" SortDirection="Ascending"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Levels"  Header="Levels" Binding="{Binding Level}" Width="100" SortDirection="Ascending"></DataGridTextColumn>
                 <DataGridTemplateColumn x:Name="Photo" Header="Foto" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

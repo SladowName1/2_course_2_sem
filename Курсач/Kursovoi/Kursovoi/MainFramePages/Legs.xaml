@@ -9,10 +9,27 @@
       Title="Legs">
 
     <Grid>
-        <TextBlock x:Name="Topic" Text="Legs" FontSize="14" Margin="371,10,379,411"></TextBlock>
-        <DataGrid Margin="0 44 0 0" x:Name="LegsDg" AutoGenerateColumns="False" IsReadOnly="False" CanUserSortColumns="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="Levels" Header="Levels" Binding="{Binding Level}" Width="100" SortDirection="Ascending"></DataGridTextColumn>
+        <TextBlock x:Name="Topic" Text="Legs" FontSize="14" Margin="371,10,379,411" Foreground="White"></TextBlock>
+        <DataGrid Margin="0 44 0 0" x:Name="LegsDg" AutoGenerateColumns="False" IsReadOnly="False" CanUserSortColumns="True" Background="#3e5d57" >
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#123F4E"/>
+                        </Trigger>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter Property="Background"  Value="#3e5d57"/>
+                        </Trigger>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter Property="Background"  Value="#123F4E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns> 
+                <DataGridTextColumn x:Name="Levels" Header="Levels" Binding="{Binding Level}" Width="100" SortDirection="Ascending"> </DataGridTextColumn>
                 <DataGridTemplateColumn x:Name="Photo" Header="Foto" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -4,25 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoi"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="558.965" Width="884.138">
+        mc:Ignorable="d" 
+        Title="MainWindow" Height="558.965" Width="884.138"
+        Icon="D:\Лого.jpg" >
+    <Window.Background>
+        <ImageBrush ImageSource="D:\Image\Fon2.jpg"></ImageBrush>
+    </Window.Background>
     <Grid>
-        <Button x:Name="Registration" Content="Registration" HorizontalAlignment="Left" Margin="734,10,0,0" VerticalAlignment="Top" Width="64" Height="23" Click="Reg_Click"/>
-        <Button x:Name="Authorization" Content="Authorization" HorizontalAlignment="Left" Margin="803,10,0,0" VerticalAlignment="Top" Width="64" Height="23" Click="Auth_Click"/>
-        <Frame Margin="0,0,0,10" x:Name="Frame" NavigationUIVisibility="Hidden"/>
-        <Button x:Name="MyWorkouts" Content="My Workout" HorizontalAlignment="Left" Margin="783,10,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="My_Click"/>
+        <Button x:Name="Registration" Content="Registration" HorizontalAlignment="Left" Margin="724,10,0,0" VerticalAlignment="Top" Width="67" Height="23" Click="Reg_Click" Template="{StaticResource Reg}"/>
+        <Button x:Name="Authorization" Content="Authorization" HorizontalAlignment="Left" Margin="794,10,0,0" VerticalAlignment="Top" Width="72" Height="23" Click="Auth_Click" Template="{StaticResource Auth}"/>
+        <Frame Margin="0,0,0,10" x:Name="Frame" NavigationUIVisibility="Hidden" />
+        <Button x:Name="MyWorkouts" Content="My Workout" HorizontalAlignment="Left" Margin="783,10,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="My_Click" />
         <Menu x:Name="Menu" HorizontalAlignment="Left" Height="23" Margin="696,10,0,0" VerticalAlignment="Top" Width="auto">
-            <MenuItem Header="Admin">
-                <MenuItem x:Name="AddWorkouts" Header="Add Workout" Click="Add_Click"/>
-                <MenuItem x:Name="UsersInfo" Header="Users info" Click="Info_Click"/>
+            <MenuItem Header="Admin" >
+                <MenuItem x:Name="AddWorkouts" Header="Add Workout" Click="Add_Click" />
+                <MenuItem x:Name="UsersInfo" Header="Users info" Click="Info_Click" />
             </MenuItem>
         </Menu>
-        <Menu HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto">
-            <MenuItem Header="Menu" Width="auto">
+        <Menu HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto" >
+            <MenuItem Header="Menu" Width="auto" >
                 <MenuItem Header="Legs" Click="Legs_Click" Width="auto"/>
-                <MenuItem Header="Back" Click="Back_Click" Width="auto"/>
-                <MenuItem Header="Hands" Click="Hands_Click" Width="auto"/>
-                <MenuItem x:Name="Logout" Header="Logout" Width="auto" Click="Logout_Click"/>
+                <MenuItem Header="Back" Click="Back_Click" Width="auto" />
+                <MenuItem Header="Hands" Click="Hands_Click" Width="auto" />
+                <MenuItem x:Name="Logout" Header="Logout" Width="auto" Click="Logout_Click" />
             </MenuItem>
         </Menu>
     </Grid>

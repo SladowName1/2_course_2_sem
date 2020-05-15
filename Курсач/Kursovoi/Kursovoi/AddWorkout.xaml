@@ -5,22 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-        Title="AddWorkout" Height="432.096" Width="339.006">
-    <Grid Background="blue">
-        <Label Content="Topic" HorizontalAlignment="Left" Margin="128,74,0,0" VerticalAlignment="Top"/>
-        <Label Content="Level" HorizontalAlignment="Left" Margin="128,120,0,0" VerticalAlignment="Top"/>
-        <Label Content="Image" HorizontalAlignment="Left" Margin="128,164,0,0" VerticalAlignment="Top"/>
-        <Label Content="Content" HorizontalAlignment="Left" Margin="128,220,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Levels" Background="White"  HorizontalAlignment="Left" Margin="106,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" PreviewTextInput="Text_Validation"/>
-        <Button x:Name="AddImage" Content="Add image" HorizontalAlignment="Left" Margin="107,195,0,0" VerticalAlignment="Top" Width="100" Click="Image_Click"/>
-        <RichTextBox x:Name="Content1" HorizontalAlignment="Left" Height="93" Margin="65,246,0,0" VerticalAlignment="Top" Width="180" IsReadOnly="False">
+        Title="AddWorkout" Height="432.096" Width="339.006"
+        Icon="D:\Лого.jpg">
+    <Window.Background>
+        <ImageBrush ImageSource="D:\Image\Fon5.jpg"></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Label Content="Topic" HorizontalAlignment="Left" Margin="128,74,0,0" VerticalAlignment="Top" Foreground="White" />
+        <Label Content="Level" HorizontalAlignment="Left" Margin="128,120,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Image" HorizontalAlignment="Left" Margin="128,164,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Content" HorizontalAlignment="Left" Margin="128,220,0,0" VerticalAlignment="Top" Foreground="White" />
+        <TextBox x:Name="Levels" HorizontalAlignment="Left" Margin="106,146,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Width="100" PreviewTextInput="Text_Validation"/>
+        <Button x:Name="AddImage" Content="Add image" HorizontalAlignment="Left" Margin="107,195,0,0" VerticalAlignment="Top" Width="100" Click="Image_Click" Background="LightGray"/>
+        <RichTextBox x:Name="Content1" HorizontalAlignment="Left" Height="93" Margin="71,246,0,0" VerticalAlignment="Top" Width="180" IsReadOnly="False" Background="LightGray">
         </RichTextBox>
-        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="34,356,0,0" VerticalAlignment="Top" Width="76" Click="Add_Click"/>
-        <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="193,356,0,0" VerticalAlignment="Top" Width="76" Click="Cancel_Click"/>
-        <ComboBox x:Name="Topic" HorizontalAlignment="Left" Margin="106,100,0,0" VerticalAlignment="Top" Width="100" Height="20">
-            <TextBox x:Name="Legs" Text="Legs"></TextBox>
-            <TextBox x:Name="Back" Text="Back" ></TextBox>
-            <TextBox x:Name="Hands" Text="Hands"></TextBox>
+        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="45,356,0,0" VerticalAlignment="Top" Width="76" Click="Add_Click" Background="LightGray"/>
+        <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Left" Margin="193,356,0,0" VerticalAlignment="Top" Width="76" Click="Cancel_Click" Background="LightGray"/>
+        <ComboBox x:Name="Topic" HorizontalAlignment="Left" Margin="106,100,0,0" VerticalAlignment="Top" Width="100" Height="20" >
+            <TextBox x:Name="Legs" Text="Legs" Background="LightGray" ></TextBox>
+            <TextBox x:Name="Back" Text="Back" Background="LightGray"></TextBox>
+            <TextBox x:Name="Hands" Text="Hands" Background="LightGray"></TextBox>
         </ComboBox>
 
     </Grid>

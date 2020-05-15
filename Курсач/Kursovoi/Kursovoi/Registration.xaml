@@ -5,16 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-        Title="Registration" Height="340.138" Width="282.597" Background="Green">
+        Title="Registration" Height="340.138" Width="282.597"
+        Icon="D:\Лого.jpg">
+    <Window.Background>
+        <ImageBrush ImageSource="D:\Image\Fon1.jpg"/>
+    </Window.Background>
     <Grid>
-        <Label  Content="Login" HorizontalAlignment="Left" Margin="91,37,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="0.486,0.615" />
+        <Label  Content="Login" HorizontalAlignment="Left" Margin="91,37,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="0.486,0.615" Foreground="White"  FontWeight="Bold"/>
         <TextBox x:Name="RegLogin" HorizontalAlignment="Left" Margin="91,68,0,0" TextWrapping="Wrap" IsReadOnly="False" VerticalAlignment="Top" Width="115"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="91,99,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="0.486,0.615"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="91,99,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="0.486,0.615" Foreground="White"  FontWeight="Bold" />
         <PasswordBox x:Name="RegPassword" HorizontalAlignment="Left" Margin="91,135,0,0" VerticalAlignment="Top" Width="115"/>
-        <Label Content="Copy Password" HorizontalAlignment="Left" Margin="91,165,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="0.486,0.615"/>
+        <Label Content="Copy Password" HorizontalAlignment="Left" Margin="91,165,0,0" VerticalAlignment="Top" Width="115" RenderTransformOrigin="0.486,0.615" Foreground="White"  FontWeight="Bold" />
         <PasswordBox x:Name="RegCopyPassword" HorizontalAlignment="Left" Margin="91,203,0,0" VerticalAlignment="Top" Width="115"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="31,256,0,0" VerticalAlignment="Top" Width="75" Click="Reg_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="183,256,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.16,-0.017" Click="Back_Click"/>
+        <Button Content="Registration" HorizontalAlignment="Left" Margin="31,256,0,0" VerticalAlignment="Top" Width="75" Click="Reg_Click" Background="White"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="183,256,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.16,-0.017" Click="Back_Click" Background="White"/>
 
     </Grid>
 </Window>

@@ -9,17 +9,15 @@
       Title="FirstPage">
 
     <Grid Margin="0,44,0,0">
-        <Label Content="Hello, this app is called a home trainer " HorizontalAlignment="Center" Margin="178,54,184,0" VerticalAlignment="Top" FontSize="26"/>
-        <Label Margin="0,102,0,0" HorizontalAlignment="Center" Width="800" Height="auto" VerticalAlignment="Top">
+        <Label Content="Hello, this app is called a home trainer " HorizontalAlignment="Center" Margin="209,128,221,0" VerticalAlignment="Top" FontSize="26" Foreground="White"/>
+        <Label Margin="77,178,77,0" HorizontalAlignment="Center" Width="730" Height="auto" VerticalAlignment="Top">
             <Label.Content>
-                <TextBlock Height="auto" FontSize="20">This application, you will find training such as training on the arms, legs and back.<LineBreak/>
-                This application is also tailored to several stages of development of your power capabilities.<LineBreak/>
+                <TextBlock Height="auto" FontSize="20" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">This application, you will find training such as training on the arms, legs and back.<LineBreak/>
+                This application is also tailored to several stages of development of your power<LineBreak/> capabilities.
                 And if you follow all the instructions in the future you will become so.
                 </TextBlock>
             </Label.Content>
         </Label>
-        <Image Source="HandsL3.jpg"  Margin="0,210,534,62" Width="266" />
-        <Image Source="BackL3.jpg" Margin="253,205,267,62"/>
-        <Image Source="LegsL3.jpg" Width="266" Margin="524,205,10,62"/>
+
     </Grid>
 </Page>
