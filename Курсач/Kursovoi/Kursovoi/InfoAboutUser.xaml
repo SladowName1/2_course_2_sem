@@ -5,20 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-        Title="InfoAboutUser" Height="323.041" Width="223.041"
+        Title="InfoAboutUser" Height="209.622" Width="169.37"
         Icon="D:\Лого.jpg">
     <Grid Margin="0,0,2,0">
-        <DataGrid x:Name="UserInfoDg" AutoGenerateColumns="False">
+        <DataGrid x:Name="UserInfoDg" AutoGenerateColumns="False" Background="#3e5d57">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#123F4E"/>
+                        </Trigger>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter Property="Background"  Value="#3e5d57"/>
+                        </Trigger>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter Property="Background"  Value="#123F4E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="UserIdDg" Binding="{Binding UsersId}" Header="User Id" Width="75"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="UserIdDg" Binding="{Binding UserId}" Header="User Id" Width="75"></DataGridTextColumn>
                 <DataGridTextColumn x:Name="TopicNumberDg" Binding="{Binding TopicNumber}" Header="Topic number" Width="auto"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="Delete" Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="Delete" Click="Delete_Click"></Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

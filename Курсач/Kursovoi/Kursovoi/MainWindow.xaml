@@ -14,7 +14,7 @@
         <Button x:Name="Registration" Content="Registration" HorizontalAlignment="Left" Margin="724,10,0,0" VerticalAlignment="Top" Width="67" Height="23" Click="Reg_Click" Template="{StaticResource Reg}"/>
         <Button x:Name="Authorization" Content="Authorization" HorizontalAlignment="Left" Margin="794,10,0,0" VerticalAlignment="Top" Width="72" Height="23" Click="Auth_Click" Template="{StaticResource Auth}"/>
         <Frame Margin="0,0,0,10" x:Name="Frame" NavigationUIVisibility="Hidden" />
-        <Button x:Name="MyWorkouts" Content="My Workout" HorizontalAlignment="Left" Margin="783,10,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="My_Click" />
+        <Button x:Name="MyWorkouts" Content="My Workout" HorizontalAlignment="Left" Margin="783,10,0,0" VerticalAlignment="Top" Width="83" Height="23" Click="My_Click" Template="{StaticResource MyWork}" />
         <Menu x:Name="Menu" HorizontalAlignment="Left" Height="23" Margin="696,10,0,0" VerticalAlignment="Top" Width="auto">
             <MenuItem Header="Admin" >
                 <MenuItem x:Name="AddWorkouts" Header="Add Workout" Click="Add_Click" />

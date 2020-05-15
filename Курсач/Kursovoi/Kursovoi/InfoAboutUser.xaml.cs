@@ -28,18 +28,6 @@ namespace Kursovoi
             db.UsersToTopics.Load();
             UserInfoDg.ItemsSource = db.UsersToTopics.Local.ToBindingList();
         }
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            db.UsersToTopics.Load();
-            UsersToTopic usersToTopic = UserInfoDg.SelectedItem as UsersToTopic;
-            if (usersToTopic != null)
-            {
-                db.UsersToTopics.RemoveRange(db.UsersToTopics.Where(y => y.UserId == ((UsersToTopic)UserInfoDg.SelectedItem).UserId && y.TopicNumber == ((UsersToTopic)UserInfoDg.SelectedItem).TopicNumber));
-            }
-            db.SaveChanges();
-            db.UsersToTopics.Load();
-            UserInfoDg.ItemsSource = db.UsersToTopics.Local.ToBindingList();
-
-        }
+       
     }
 }

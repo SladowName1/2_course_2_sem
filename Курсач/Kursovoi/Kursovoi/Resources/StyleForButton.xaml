@@ -11,4 +11,24 @@
             <ContentControl Content="Authorisation" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentControl>
         </Border>
     </ControlTemplate>
+    <ControlTemplate TargetType="Button" x:Key="MyWork">
+        <Border CornerRadius="6" Background="White" Width="auto" Height="auto">
+            <ContentControl Content="My Workout" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentControl>
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate TargetType="Button" x:Key="Sub">
+        <Border CornerRadius="6" Background="White" Width="auto" Height="auto">
+            <ContentControl Content="Subscribe" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentControl>
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate TargetType="Button" x:Key="Done">
+        <Border CornerRadius="6" Background="White" Width="auto" Height="auto">
+            <ContentControl Content="Finished" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentControl>
+        </Border>
+    </ControlTemplate>
+    <ControlTemplate TargetType="Button" x:Key="Delete">
+        <Border CornerRadius="6" Background="White" Width="auto" Height="auto">
+            <ContentControl Content="Delete" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentControl>
+        </Border>
+    </ControlTemplate>
 </ResourceDictionary>
