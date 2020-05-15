@@ -14,7 +14,7 @@ namespace Kursovoi
     
     public partial class UsersToTopic
     {
-        public Nullable<int> UsersId { get; set; }
+        public Nullable<int> UserId { get; set; }
         public Nullable<int> TopicNumber { get; set; }
         public int Numbers { get; set; }
     

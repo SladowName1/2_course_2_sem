@@ -71,7 +71,7 @@ namespace Kursovoi.MainFramePages
             {
                 using (KursachEntities db = new KursachEntities())
                 {
-                    UsersToTopic user1 = new UsersToTopic { UsersId = a, TopicNumber = ((Topic)BackDG.SelectedItem).NumberOfTopic };
+                    UsersToTopic user1 = new UsersToTopic { UserId = a, TopicNumber = ((Topic)BackDG.SelectedItem).NumberOfTopic };
                     db.UsersToTopics.Add(user1);
                     db.SaveChanges();
                 }
@@ -82,27 +82,19 @@ namespace Kursovoi.MainFramePages
             db = new KursachEntities();
             db.Topics.Load();
             db.UsersToTopics.Load();
-            UsersToTopic usersToTopic = BackDG.SelectedItem as UsersToTopic;
             Topic topic = BackDG.SelectedItem as Topic;
-            //db.UsersToTopics.RemoveRange(db.UsersToTopics.Where(y => y.TopicNumber == ((UsersToTopic)BackDG.SelectedItem).TopicNumber));
-            //db.SaveChanges();
-            //db.Topics.Remove(db.Topics.Where(y => y.NumberOfTopic == ((Topic)BackDG.SelectedItem).NumberOfTopic).First());
-            //db.SaveChanges();
-            var UserTo = db.Topics;
-            int numbertopic = 0;
-            foreach (Topic i in UserTo.Where(x=>x.NumberOfTopic==((Topic)BackDG.SelectedItem).NumberOfTopic))
+            int numbers=0;
+            var userToTopic = db.Topics;
+            foreach(Topic i in userToTopic.Where(x=>x.NumberOfTopic==((Topic)BackDG.SelectedItem).NumberOfTopic))
             {
-                numbertopic = (int)i.NumberOfTopic;
+                numbers = (int)i.NumberOfTopic;
+              
             }
-            Test.Text = Convert.ToString(numbertopic);
-            if (usersToTopic != null)
+            int number = db.Database.ExecuteSqlCommand($"Delete from UsersToTopic Where TopicNumber={numbers}");
+            if (topic != null)
             {
-                int numberOfRowDeleted = db.Database.ExecuteSqlCommand($"Delete from UserToTopic where TopicNumber={numbertopic}");
-                db.SaveChanges();
+                int b = db.Database.ExecuteSqlCommand($"Delete from Topic Where NumberOfTopic={numbers}");
             }
-            if(topic!=null)
-                db.Topics.Remove(db.Topics.Where(x=>x.NumberOfTopic==((Topic)BackDG.SelectedItem).NumberOfTopic).First());
-            db.SaveChanges();
             db.Topics.Load();
             BackDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Back");
         }

@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Kursovoi.Resources">
+    <Image x:Key="Hands" Source="HadsL3.jpg"/>
+    <Image x:Key="Legs" Source="LegsL3.jpg"/>
+    <Image x:Key="Back" Source="BackL3.jpg"/>
+</ResourceDictionary>

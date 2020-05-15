@@ -64,11 +64,31 @@ namespace Kursovoi
             {
                 using (KursachEntities db = new KursachEntities())
                 {
-                    UsersToTopic user1 = new UsersToTopic {UsersId=a,TopicNumber=((Topic)LegsDg.SelectedItem).NumberOfTopic};
+                    UsersToTopic user1 = new UsersToTopic {UserId=a,TopicNumber=((Topic)LegsDg.SelectedItem).NumberOfTopic};
                     db.UsersToTopics.Add(user1);
                     db.SaveChanges();
                 }
             }
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            db = new KursachEntities();
+            db.Topics.Load();
+            db.UsersToTopics.Load();
+            Topic topic = LegsDg.SelectedItem as Topic;
+            int numbers = 0;
+            var userToTopic = db.Topics;
+            foreach (Topic i in userToTopic.Where(x => x.NumberOfTopic == ((Topic)LegsDg.SelectedItem).NumberOfTopic))
+            {
+                numbers = (int)i.NumberOfTopic;
+
+            }
+            int number = db.Database.ExecuteSqlCommand($"Delete from UsersToTopic Where TopicNumber={numbers}");
+            if (topic != null)
+            {
+                int b = db.Database.ExecuteSqlCommand($"Delete from Topic Where NumberOfTopic={numbers}");
+            }
+
         }
         private void Refresh_Click(object sendeer, RoutedEventArgs e)
         {

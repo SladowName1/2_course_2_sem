@@ -33,6 +33,7 @@ namespace Kursovoi
             MyWorkouts.Visibility = Visibility.Hidden;
             Menu.Visibility = Visibility.Hidden;
             Logout.Visibility = Visibility.Hidden;
+            Frame.Content = new FirstPage();
         }
         public MainWindow(int _id)
         {
@@ -43,6 +44,7 @@ namespace Kursovoi
             Authorization.Visibility = Visibility.Hidden;
             MyWorkouts.Visibility = Visibility.Visible;
             Menu.Visibility = Visibility.Hidden;
+            Frame.Content = new FirstPage();
         }
         public MainWindow(string str)
         {

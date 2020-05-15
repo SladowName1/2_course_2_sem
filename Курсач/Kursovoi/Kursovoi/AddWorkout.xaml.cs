@@ -22,7 +22,7 @@ namespace Kursovoi
     public partial class AddWorkout : Window
     {
         KursachEntities db;
-        public string FilePath = @"D:\";
+        public string FilePath = @"D:\Image";
         public AddWorkout()
         {
             InitializeComponent();

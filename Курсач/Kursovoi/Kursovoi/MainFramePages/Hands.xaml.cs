@@ -60,11 +60,32 @@ namespace Kursovoi.MainFramePages
             {
                 using (KursachEntities db = new KursachEntities())
                 {
-                    UsersToTopic user1 = new UsersToTopic { UsersId = a, TopicNumber = ((Topic)HandsDG.SelectedItem).NumberOfTopic };
+                    UsersToTopic user1 = new UsersToTopic { UserId = a, TopicNumber = ((Topic)HandsDG.SelectedItem).NumberOfTopic };
                     db.UsersToTopics.Add(user1);
                     db.SaveChanges();
                 }
             }
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            db = new KursachEntities();
+            db.Topics.Load();
+            db.UsersToTopics.Load();
+            Topic topic = HandsDG.SelectedItem as Topic;
+            int numbers = 0;
+            var userToTopic = db.Topics;
+            foreach (Topic i in userToTopic.Where(x => x.NumberOfTopic == ((Topic)HandsDG.SelectedItem).NumberOfTopic))
+            {
+                numbers = (int)i.NumberOfTopic;
+
+            }
+            int number = db.Database.ExecuteSqlCommand($"Delete from UsersToTopic Where TopicNumber={numbers}");
+            if (topic != null)
+            {
+                int b = db.Database.ExecuteSqlCommand($"Delete from Topic Where NumberOfTopic={numbers}");
+            }
+            db.Topics.Load();
+            HandsDG.ItemsSource = db.Topics.Local.ToBindingList().Where(x => x.Topic1 == "Hands");
         }
         private void Refresh_Click(object sendeer, RoutedEventArgs e)
         {

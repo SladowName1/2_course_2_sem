@@ -20,7 +20,7 @@
         <ComboBox x:Name="Topic" HorizontalAlignment="Left" Margin="106,100,0,0" VerticalAlignment="Top" Width="100" Height="20">
             <TextBox x:Name="Legs" Text="Legs"></TextBox>
             <TextBox x:Name="Back" Text="Back" ></TextBox>
-            <TextBox x:Name="Hands" Text="Hadns"></TextBox>
+            <TextBox x:Name="Hands" Text="Hands"></TextBox>
         </ComboBox>
 
     </Grid>
