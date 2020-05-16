@@ -114,6 +114,10 @@ namespace Kursovoi
             this.Close();
             mainWindow.Show();
         }
+        private void Add_Admin(object sender, RoutedEventArgs e)
+        {
+
+        }
 
     }
 }

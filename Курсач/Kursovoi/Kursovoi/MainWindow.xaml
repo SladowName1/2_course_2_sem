@@ -19,6 +19,7 @@
             <MenuItem Header="Admin" >
                 <MenuItem x:Name="AddWorkouts" Header="Add Workout" Click="Add_Click" />
                 <MenuItem x:Name="UsersInfo" Header="Users info" Click="Info_Click" />
+                <MenuItem x:Name="AddAdmin" Header="Add admin" Click="Add_Admin" />
             </MenuItem>
         </Menu>
         <Menu HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto" >
