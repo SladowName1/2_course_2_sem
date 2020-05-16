@@ -78,7 +78,6 @@ namespace Kursovoi
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
             if (a > 0)
                 Frame.Content = new Back(a);
             else if (_str != "")
@@ -116,7 +115,13 @@ namespace Kursovoi
         }
         private void Add_Admin(object sender, RoutedEventArgs e)
         {
-
+            AddAdmin addAdmin = new AddAdmin();
+            addAdmin.Show();
+        }
+        private void Ban_User(object sender, RoutedEventArgs e)
+        {
+            BanUser banUser = new BanUser();
+            banUser.Show();
         }
 
     }

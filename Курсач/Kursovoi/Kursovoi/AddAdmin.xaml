@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovoi"
         mc:Ignorable="d"
-        Title="AddAdmin" Height="421.787" Width="303.448">
+        Title="AddAdmin" Height="314.687" Width="298.159"
+        Icon="D:\Лого.jpg">
+    <Window.Background>
+        <ImageBrush ImageSource="D:\Image\Admin.jpg"></ImageBrush>
+    </Window.Background>
     <Grid>
-        
+        <Label Content="Login" HorizontalAlignment="Left" Margin="98,59,0,0" VerticalAlignment="Top" Width="57" Foreground="White" FontWeight="Bold"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="98,120,0,0" VerticalAlignment="Top" Width="70" Foreground="White" FontWeight="Bold"/>
+        <TextBox x:Name="AddLogin" HorizontalAlignment="Left" Height="23" Margin="98,90,0,0" TextWrapping="Wrap" IsReadOnly="False" VerticalAlignment="Top" Width="107"/>
+        <PasswordBox x:Name="AddPassword" HorizontalAlignment="Left" Height="23" Margin="98,146,0,0" VerticalAlignment="Top" Width="107"/>
+        <Button Content="Add admin" HorizontalAlignment="Left" Margin="44,199,0,0" VerticalAlignment="Top" Width="auto" Height="25" Click="Add_admin" Background="White"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="190,199,0,0" VerticalAlignment="Top" Width="63" Height="25" Click="Cancel_Click" Background="White"/>
     </Grid>
 </Window>

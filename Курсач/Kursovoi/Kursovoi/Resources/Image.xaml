@@ -4,4 +4,5 @@
     <Image x:Key="Hands" Source="HadsL3.jpg"/>
     <Image x:Key="Legs" Source="LegsL3.jpg"/>
     <Image x:Key="Back" Source="BackL3.jpg"/>
+    <Image x:Key="Ref" Source="D:\Image\ref.png"/>
 </ResourceDictionary>

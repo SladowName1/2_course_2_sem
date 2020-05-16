@@ -48,6 +48,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="752,10,0,0" VerticalAlignment="Top" Width="auto" Height="23" Click="Delete_Click"/>
-        <Button x:Name="Refresh" Margin="66,10,0,0" Click="Refresh_Click" Width="20" Height="20"  VerticalAlignment="Top"  HorizontalAlignment="Left"/>
+        <Button x:Name="Refresh" Margin="66,10,0,0" Click="Refresh_Click" Width="20" Height="20"  VerticalAlignment="Top"  HorizontalAlignment="Left"  Content="{StaticResource Ref}"/>
     </Grid>
 </Page>
