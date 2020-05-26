@@ -1,0 +1,27 @@
+﻿<Page x:Class="Lab11.Pages.Customers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lab11.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="443"
+      Title="Customers" Width="288.554" Loaded="Page_Loaded">
+
+    <Grid>
+        <DataGrid x:Name="CustomersDG" AutoGenerateColumns="False" Margin="0,30,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="NameCustomers" Binding="{Binding NameCustomers}"></DataGridTextColumn>
+                <DataGridTextColumn Header="PhoneNumber" Binding="{Binding PhoneNumber}"></DataGridTextColumn>
+                <DataGridTemplateColumn  Header="Delete" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Delete" Height="50" Width="100" Click="deleteButton_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="204,5,0,0" VerticalAlignment="Top" Width="75" Click="Tran"/>
+    </Grid>
+</Page>

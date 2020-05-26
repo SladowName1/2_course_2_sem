@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Lab11.Pages;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,25 +25,36 @@ namespace Lab11
     {
         public MainWindow()
         {
-            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Lab11;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             InitializeComponent();
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
                 // Открываем подключение
                 connection.Open();
-                Console.WriteLine("Подключение открыто");
+                MessageBox.Show("Подключение открыто");
             }
             catch (SqlException ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                // закрываем подключение
-                connection.Close();
-                Console.WriteLine("Подключение закрыто...");
-            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void Products_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new Product();
+        }
+        private void Orders_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new Orders();
+        }
+        private void Customers_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new Customers();
         }
     }
 }

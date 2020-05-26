@@ -1,0 +1,34 @@
+﻿<Page x:Class="Lab11.Pages.Product"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lab11.Pages"
+      mc:Ignorable="d"
+      Title="Product" Width="481.928" Height="441.334" Loaded="Page_Loaded">
+    <Grid>
+        <DataGrid x:Name="ProductDG" AutoGenerateColumns="False" Margin="0,30,0,0" RowEditEnding="Row_Editing">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" SortDirection="Ascending"></DataGridTextColumn>
+                <DataGridTextColumn Header="NameOfProduct" Binding="{Binding NameProducts}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}"></DataGridTextColumn>
+                <DataGridTemplateColumn x:Name="Photo" Header="Photo" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Photo}"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn  Header="Order" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Subscribe" Height="50" Width="100" Click="Oreder_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Margin="385,0,37,411" RenderTransformOrigin="0.8,0.556" Height="30" Click="Add_click"></Button>
+        <Button Margin="347,5,102,416" RenderTransformOrigin="0.8,0.556" Click="Upd_click"/>
+    </Grid>
+</Page>

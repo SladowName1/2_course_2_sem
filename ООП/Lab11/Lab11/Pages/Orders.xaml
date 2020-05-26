@@ -1,0 +1,34 @@
+﻿<Page x:Class="Lab11.Pages.Orders"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lab11.Pages"
+      mc:Ignorable="d"
+      Title="Orders" Width="556.024" Loaded="Page_Loaded" Height="441.334">
+
+    <Grid>
+        <DataGrid x:Name="OrdersDG" AutoGenerateColumns="False" Margin="0,30,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="IdOrders" Binding="{Binding IdOrders}"></DataGridTextColumn>
+                <DataGridTextColumn Header="NameCustmores" Binding="{Binding NameCustomers}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Products" Binding="{Binding Products}"></DataGridTextColumn>
+                <DataGridTemplateColumn x:Name="Photo" Header="Photo" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Photo}"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn  Header="Delete" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Subscribe" Height="50" Width="100" Click="deleteButton_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Margin="389,0,62,410" RenderTransformOrigin="0.8,0.556" Height="30"></Button>
+    </Grid>
+</Page>
