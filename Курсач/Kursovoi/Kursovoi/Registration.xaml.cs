@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Security.Cryptography;
 
 namespace Kursovoi
 {
@@ -20,6 +23,13 @@ namespace Kursovoi
     
     public partial class Registration : Window
     {
+        public string GetHash(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            return Convert.ToBase64String(hash);
+        }
         public Registration()
         {
             InitializeComponent();
@@ -44,7 +54,8 @@ namespace Kursovoi
                         {
                             using (KursachEntities db = new KursachEntities())
                             {
-                                User user1 = new User { Login = RegLogin.Text, Password = RegPassword.Password };
+                                string vs = GetHash(RegPassword.Password);  
+                                User user1 = new User { Login = RegLogin.Text, Password = vs};
                                 db.Users.Add(user1);
                                 db.SaveChanges();
                                 MainWindow mainWindow = new MainWindow(user1.Id);

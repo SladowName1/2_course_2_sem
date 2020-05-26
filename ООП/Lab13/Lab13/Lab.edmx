@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Lab13Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="T1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCustomer" Type="int" />
+          <Property Name="IdOrder" Type="int" />
+        </EntityType>
+        <Association Name="FK__T3__IdCustomer__145C0A3F">
+          <End Role="T1" Type="Self.T1" Multiplicity="0..1" />
+          <End Role="T3" Type="Self.T3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T3">
+              <PropertyRef Name="IdCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__T3__IdOrder__15502E78">
+          <End Role="T2" Type="Self.T2" Multiplicity="0..1" />
+          <End Role="T3" Type="Self.T3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T3">
+              <PropertyRef Name="IdOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Lab13ModelContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T1" EntityType="Self.T1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T2" EntityType="Self.T2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T3" EntityType="Self.T3" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__T3__IdCustomer__145C0A3F" Association="Self.FK__T3__IdCustomer__145C0A3F">
+            <End Role="T1" EntitySet="T1" />
+            <End Role="T3" EntitySet="T3" />
+          </AssociationSet>
+          <AssociationSet Name="FK__T3__IdOrder__15502E78" Association="Self.FK__T3__IdOrder__15502E78">
+            <End Role="T2" EntitySet="T2" />
+            <End Role="T3" EntitySet="T3" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Lab13Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="T1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T3" Relationship="Self.FK__T3__IdCustomer__145C0A3F" FromRole="T1" ToRole="T3" />
+        </EntityType>
+        <EntityType Name="T2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T3" Relationship="Self.FK__T3__IdOrder__15502E78" FromRole="T2" ToRole="T3" />
+        </EntityType>
+        <EntityType Name="T3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCustomer" Type="Int32" />
+          <Property Name="IdOrder" Type="Int32" />
+          <NavigationProperty Name="T1" Relationship="Self.FK__T3__IdCustomer__145C0A3F" FromRole="T3" ToRole="T1" />
+          <NavigationProperty Name="T2" Relationship="Self.FK__T3__IdOrder__15502E78" FromRole="T3" ToRole="T2" />
+        </EntityType>
+        <Association Name="FK__T3__IdCustomer__145C0A3F">
+          <End Role="T1" Type="Self.T1" Multiplicity="0..1" />
+          <End Role="T3" Type="Self.T3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T3">
+              <PropertyRef Name="IdCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__T3__IdOrder__15502E78">
+          <End Role="T2" Type="Self.T2" Multiplicity="0..1" />
+          <End Role="T3" Type="Self.T3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T3">
+              <PropertyRef Name="IdOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Lab13Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="T1" EntityType="Self.T1" />
+          <EntitySet Name="T2" EntityType="Self.T2" />
+          <EntitySet Name="T3" EntityType="Self.T3" />
+          <AssociationSet Name="FK__T3__IdCustomer__145C0A3F" Association="Self.FK__T3__IdCustomer__145C0A3F">
+            <End Role="T1" EntitySet="T1" />
+            <End Role="T3" EntitySet="T3" />
+          </AssociationSet>
+          <AssociationSet Name="FK__T3__IdOrder__15502E78" Association="Self.FK__T3__IdOrder__15502E78">
+            <End Role="T2" EntitySet="T2" />
+            <End Role="T3" EntitySet="T3" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Lab13ModelContainer" CdmEntityContainer="Lab13Entities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Lab13Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T1">
+            <EntityTypeMapping TypeName="Lab13Model.T1">
+              <MappingFragment StoreEntitySet="T1">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T2">
+            <EntityTypeMapping TypeName="Lab13Model.T2">
+              <MappingFragment StoreEntitySet="T2">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T3">
+            <EntityTypeMapping TypeName="Lab13Model.T3">
+              <MappingFragment StoreEntitySet="T3">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+                <ScalarProperty Name="IdOrder" ColumnName="IdOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

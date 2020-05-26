@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Security.Cryptography;
 
 namespace Kursovoi
 {
@@ -25,7 +26,13 @@ namespace Kursovoi
         {
             InitializeComponent();  
         }
+        public string GetHash(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
 
+            return Convert.ToBase64String(hash);
+        }
         private void Auth_Click(object sender, RoutedEventArgs e)
         {
             if (AuthLogin.Text.Length > 0) // проверяем введён ли логин     
@@ -51,7 +58,8 @@ namespace Kursovoi
                     }
                     foreach(var i in ts)
                     {
-                        if (i.Login == AuthLogin.Text && i.Password == AuthPassword.Password)
+                        string vs = GetHash(AuthPassword.Password); 
+                        if (i.Login == AuthLogin.Text && i.Password == vs)
                         {
                             MainWindow mainWindow = new MainWindow(i.Id);
                             mainWindow.Show();
